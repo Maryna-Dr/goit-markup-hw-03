@@ -84,9 +84,7 @@ img {
     flex-basis: calc((100% - var(--indent) * (var(--item) - 1)) / var(--item));
 }
 
-
-
-/* Приховування заголовків */
+/* Visually hidden */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -100,12 +98,9 @@ img {
     overflow: hidden;
 }
 
-/* Стилізація сторінки Студія */
-/* Header */
-.header {
-    background-color: var(--primary-white-color)
-}
+/* Page "Студія" */
 
+/* Header */
 .header-nav,
 .main-nav {
     align-items: center;
@@ -117,6 +112,7 @@ img {
 
 /* Logo-nav */
 .logo-nav {
+    display: block;
     margin-right: 93px;
 
     color: var(--primary-black-color);
@@ -128,15 +124,9 @@ img {
     letter-spacing: 0.03em;
     text-decoration: none;
 }
+
 .logo-nav .logo-accent {
     color: var(--accent-color);
-}
-
-/* Nav-flex */
-
-.site-nav > .item:not(:last-child),
-.auth-nav > .item:not(:last-child) {
-    margin-right: 50px;
 }
 
 /* Site-nav */
@@ -153,6 +143,7 @@ img {
 
     text-decoration: none;
 }
+
 .site-nav .link:hover,
 .site-nav .link:focus {
     color: var(--accent-color);
@@ -161,8 +152,6 @@ img {
 .site-nav .link.current {
     color: var(--accent-color);
 }
-
-
 
 /* Auth-nav */
 .auth-nav {
@@ -182,18 +171,26 @@ img {
     
     text-decoration: none;
 }
+
 .auth-nav .link:hover,
 .auth-nav .link:focus {
     color: var(--accent-color);
 }
 
+/* Site- and auth-nav */
+.site-nav>.item:not(:last-child),
+.auth-nav>.item:not(:last-child) {
+    margin-right: 50px;
+}
+
 /* Hero */
 .hero {
-    padding: 200px 0;
+    padding-top: 200px;
+    padding-bottom: 200px;
     background-color: var(--hero-footer-bgc);
 }
 
-.hero-box.flex {
+.hero-box {
     flex-direction: column;
     align-items: center;
 }
@@ -211,6 +208,7 @@ img {
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
+
 .hero-btn {
     display: block;
     min-width: 216px;
@@ -242,16 +240,8 @@ img {
 }
 
 /* Features */
-.features-list {
-    gap: 30px;
-}
-
-.features-list .item {
-    width: calc((100% - 90px) / 4);
-}
-
-.features-list > .item:nth-child(4n) {
-    margin-right: 0;
+.features-list > .card-set-item {
+    --item: 4;
 }
 
 .features-list .subtitle {
@@ -260,41 +250,28 @@ img {
     line-height: 1.14;
     text-transform: uppercase;
 }
-.features .text {
+
+.features-list .text {
     line-height: 1.71;
 }
 
 /* Work */
-.work-list {
-    gap: 30px;
-}
-
-.work-list > .item {
-    width: calc((100% - 60px) / 3);
-}
 
 /* Team */
 .section.team {
-    margin-bottom: 0;
-    /* padding-top: 94px;
-    padding-bottom: 94px; */
-
     background-color: var(--secondary-bg-color);
 }
 
-.team-list {
-    gap: 30px;
-}
-
-.team-list > .item {
-    width: calc((100% - 90px) / 4);
+.team-list > .card-set-item {
+    --item: 4;
+    
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 
     background-color: var(--primary-white-color);
 }
 
-.subtitle-box {
+.team-list .subtitle-box {
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 10px;
@@ -318,13 +295,14 @@ img {
 
 /* Footer */
 .footer {
-    padding: 60px 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     background-color: var(--hero-footer-bgc)
 }
 
 .footer-logo {
-    display: inline-block;
+    display: block;
     margin-bottom: 20px;
 
     color: var(--primary-white-color);
@@ -337,9 +315,11 @@ img {
 
     text-decoration: none;
 }
+
 .footer-logo .logo-accent {
     color: var(--accent-color);
 }
+
 .footer-contacts .link {
     color: var(--contacts-footer-color);
 
@@ -348,37 +328,28 @@ img {
 
     text-decoration: none;
 }
+
 .footer-contacts .address {
     color: var(--primary-white-color);
 }
+
 .footer-contacts .touch:hover,
 .footer-contacts .touch:focus {
     color: var(--accent-color);
 }
 
-.link.address, .link.touch {
-    display: inline-block;
+.footer-link:not(:last-child) {
     margin-bottom: 9px;
 }
 
-.footer-link:last-child {
-    margin-bottom: 0;
-}
 
-/* Стилізація сторінки Портфоліо */
-
+/* Page "Портфоліо" */
 
 /* Portfolio-button */
-.portfolio {
-    margin-bottom: 0;
-} 
 .portfolio-list {
     justify-content: center;
+    gap: 8px;
     margin-bottom: 50px;
-}
-
-.portfolio-list > .item:not(:last-child) {
-    margin-right: 8px;
 }
 
 .portfolio-list .portfolio-btn {
@@ -398,11 +369,13 @@ img {
 
     cursor: pointer;
 }
+
 .portfolio-list .portfolio-btn:hover,
 .portfolio-list .portfolio-btn:focus {
     background-color: var(--accent-color);
     color: var(--primary-white-color);
 }
+
 .portfolio-btn.current {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 
@@ -411,24 +384,6 @@ img {
 }
 
 /* Portfolio-examples */
-.portfolio-examples {
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.portfolio-examples .title {
-    color: var(--title-text-color);
-
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
-}
-.portfolio-examples > .item {
-    width: calc((100% - 60px) / 3);
-
-    background-color: var(--primary-white-color);
-}
-
 .portfolio-examples .title-box {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -440,8 +395,13 @@ img {
 
 .portfolio-examples .title {
     margin-bottom: 4px;
-}
 
+    color: var(--title-text-color);
+        
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+}
 
 .portfolio-examples .text {
     font-size: 16px;
