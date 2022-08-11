@@ -178,10 +178,10 @@ img {
 .hero .hero-flex {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .hero .hero-title {
-    align-self: center;
     margin-bottom: 30px;
     width: 696px;
 
@@ -195,7 +195,6 @@ img {
     text-transform: uppercase;
 }
 .hero-btn {
-    align-self: center;
     display: block;
     min-width: 216px;
     padding: 10px 32px;
